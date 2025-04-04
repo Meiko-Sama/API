@@ -109,8 +109,53 @@ form .input_data .label_area {
 
   transform: translateY(-50%);
   background-color: #141016;
+  color: #fff;
 
   padding: 0 15px;
 
   transition: top 0.5s ease, left 0.5s ease;
+}
+
+form .input_data input:focus,
+form .input_data input:valid {
+  color: #fff;
+  border-color: #742b37;
+}
+
+form .input_data input:focus ~ .label_area {
+  z-index: 600;
+
+  top: 0;
+  left: 7%;
+
+  color: #742b37;
+}
+
+form select,
+form option {
+  width: 100%;
+  height: 50px;
+
+  outline: none;
+  border-radius: 10px;
+
+  background: transparent;
+
+  border: 2px solid #742b37;
+  color: #742b37;
+}
+
+form button {
+  width: 100%;
+  background-color: #742b37;
+
+  padding: 10px;
+  border-radius: 5px;
+
+  cursor: pointer;
+  color: #141016;
+}
+
+form button:hover {
+  background-color: #742b37;
 }

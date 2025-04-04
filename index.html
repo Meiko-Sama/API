@@ -12,13 +12,64 @@
 
       <div class="form_container">
         <h1>Create Your Account to Unleash Your Dream!</h1>
+
         <form action="#">
           <div class="input_data">
-            <input type="text" name="cep" id="cep" />
+            <input type="text" name="cep" id="cep" required />
+
             <div class="label_area">
               <p>Digite seu CEP</p>
             </div>
           </div>
+
+          <div class="input_data">
+            <input type="text" name="rua" id="rua" required />
+
+            <div class="label_area">
+              <p>Digite sua rua</p>
+            </div>
+          </div>
+
+          <div class="input_data">
+            <input type="text" name="bairro" id="bairro" required />
+
+            <div class="label_area">
+              <p>Digite seu bairro</p>
+            </div>
+          </div>
+
+          <div class="input_data">
+            <input type="text" name="cidade" id="cidade" required />
+
+            <div class="label_area">
+              <p>Digite sua cidade</p>
+            </div>
+          </div>
+
+          <div class="input_data">
+            <input type="text" name="uf" id="uf" required />
+
+            <div class="label_area">
+              <p>Digite a sigla de seu estado</p>
+            </div>
+          </div>
+
+          <div class="input_data">
+            <input type="text" name="complemento" id="complemento" required />
+
+            <div class="label_area">
+              <p>Digite seu complemento</p>
+            </div>
+          </div>
+
+          <select name="" id="tipo_endereco">
+            <option value="casa">Casa</option>
+            <option value="escola">Escola</option>
+            <option value="trabalho">Trabalho</option>
+            <option value="outro">Outro</option>
+          </select>
+
+          <button type="submit">Enviar</button>
         </form>
       </div>
     </section>
