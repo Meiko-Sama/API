@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  background-color: #141016;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  height: 90%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.image {
+  position: relative;
+
+  width: 40%;
+  height: 100%;
+
+  background: url(../img/RetratoAssustador.jpg) center / cover no-repeat;
+  border-radius: 20px;
+}
+
+.image::after {
+  content: "";
+
+  position: absolute;
+
+  top: 20px;
+  left: 15px;
+
+  width: 100%;
+  height: 100%;
+
+  background: inherit;
+  border-radius: 20px;
+  filter: blur(20px) opacity(1);
+
+  z-index: -1;
+}
+
+.form_container {
+  width: 40%;
+  height: 100%;
+
+  padding-top: 10%;
+}
+
+.form_container h1 {
+  color: #fff;
+  font-size: 3em;
+  text-shadow: 2px 2px 20px #742b37;
+}
+
+form {
+  margin-top: 40px;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+  height: 50%;
+}
+
+form .input_data {
+  width: calc(50% - 15px);
+  position: relative;
+}
