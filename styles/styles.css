@@ -124,7 +124,8 @@ form .input_data input:valid {
   border-color: #f05bbc;
 }
 
-form .input_data input:focus ~ .label_area {
+form .input_data input:focus ~ .label_area,
+form .input_data input:valid ~ .label_area {
   z-index: 600;
 
   top: 0;

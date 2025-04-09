@@ -100,9 +100,9 @@ class Endereco {
       console.log(dados);
 
       this.cep = dados.cep;
-      this.rua = dados.rua;
+      this.rua = dados.logradouro;
       this.bairro = dados.bairro;
-      this.cidade = dados.cidade;
+      this.cidade = dados.localidade;
       this.uf = dados.uf;
       this.complemento = dados.complemento || "";
 
@@ -136,7 +136,7 @@ class TipoEndereco extends Endereco {
 document
   .getElementById("cep")
   .addEventListener("input", async function (event) {
-    const cep = event.target.value;
+    const cep = event.target.value.replace(/\D/g, "");
 
     // if (cep.length === 8) {
     //   console.log("CEP VÁLIDO!");
@@ -153,9 +153,37 @@ document
         document.getElementById("bairro").value = results.bairro;
         document.getElementById("cidade").value = results.cidade;
         document.getElementById("uf").value = results.uf;
-        document.getElementById("complemento").value = results.complemento;
+        document.getElementById("complemento").value =
+          results.complemento || "";
       } else {
         alert("CEP INVÁLIDO");
       }
     }
   });
+
+document.querySelector("form").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const cep = document.getElementById("cep").value;
+  const rua = document.getElementById("rua").value;
+  const bairro = document.getElementById("bairro").value;
+  const cidade = document.getElementById("cidade").value;
+  const uf = document.getElementById("uf").value;
+  const complemento = document.getElementById("complemento").value;
+  const tipo = document.getElementById("tipo_endereco").value;
+
+  const enderecoCompleto = new TipoEndereco(
+    cep,
+    rua,
+    bairro,
+    cidade,
+    uf,
+    complemento,
+    tipo
+  );
+
+  console.log(
+    "Endereço cadastrado com sucesso! \n" +
+      JSON.stringify(enderecoCompleto.exibirEndereco(), null, 2)
+  );
+});
